@@ -1,59 +1,53 @@
 .hero-section {
   position: relative;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
-  padding-top: 5rem;
+  padding-top: 6.5rem;
+  padding-bottom: 3.5rem;
   overflow: hidden;
-}
-
-.hero-bg, .hero-grid {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.hero-grid {
-  opacity: 0.4;
+  background: var(--bg-color);
 }
 
 .hero-content {
   position: relative;
   z-index: 10;
   display: grid;
-  gap: 3rem;
-  padding: 4rem 1.5rem;
+  gap: 3.5rem;
 }
 
 @media (min-width: 1024px) {
   .hero-content {
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: 1.2fr 0.8fr;
     align-items: center;
   }
 }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 800;
-  letter-spacing: -0.025em;
-  margin-top: 0.5rem;
+  font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text-main);
+  margin-top: 1.25rem;
 }
 
 .hero-subtitle {
-  margin-top: 1rem;
-  font-size: clamp(1.25rem, 3vw, 1.875rem);
+  margin-top: 0.75rem;
+  font-size: clamp(1.15rem, 2.5vw, 1.65rem);
   font-weight: 600;
   display: flex;
   align-items: center;
+  color: var(--primary-color);
 }
 
 .cursor-blink {
   display: inline-block;
   width: 2px;
-  height: 1.5em;
+  height: 1.3em;
   background-color: var(--primary-color);
-  margin-left: 0.5rem;
+  margin-left: 0.4rem;
   animation: blink 1s step-end infinite;
 }
 
@@ -63,10 +57,11 @@
 }
 
 .hero-description {
-  margin-top: 1.5rem;
-  font-size: 1.125rem;
+  margin-top: 1.25rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
-  max-width: 600px;
+  max-width: 580px;
+  line-height: 1.65;
 }
 
 .hero-actions {
@@ -77,10 +72,18 @@
 }
 
 .hero-stats {
-  margin-top: 3rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+  margin-top: 2.75rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.stat-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow-card);
 }
 
 .stat-value {
@@ -88,16 +91,19 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-main);
+  line-height: 1.2;
 }
 
 .stat-label {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
   color: var(--text-muted);
+  margin-top: 0.25rem;
 }
 
 .hero-image-area {
   position: relative;
-  max-width: 400px;
+  max-width: 380px;
   margin: 0 auto;
   width: 100%;
 }
@@ -106,37 +112,22 @@
   position: relative;
 }
 
-.hero-image-glow {
-  position: absolute;
-  inset: -1rem;
-  background: linear-gradient(135deg, rgba(0, 229, 255, 0.3), rgba(176, 82, 255, 0.2), rgba(255, 51, 102, 0.2));
-  filter: blur(2rem);
-  border-radius: 2rem;
-}
-
 .hero-image-card {
   position: relative;
   overflow: hidden;
-  border-radius: 1.75rem;
+  border-radius: var(--radius-xl);
   border: 1px solid var(--border-color);
-  background: var(--bg-surface);
-  padding: 0.75rem;
-  box-shadow: var(--shadow-glass);
-  backdrop-filter: blur(24px);
+  background: #FFFFFF;
+  padding: 0.65rem;
+  box-shadow: 0 10px 30px rgba(28, 25, 23, 0.06);
 }
 
 .profile-placeholder {
   aspect-ratio: 4/5;
-  border-radius: 1.25rem;
+  border-radius: var(--radius-lg);
   position: relative;
   overflow: hidden;
-  background: #0a1128;
-}
-
-.profile-gradient {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(45deg, #0a1128, #1a2c5b);
+  background: #EAE5DB;
 }
 
 .profile-info {
@@ -144,23 +135,25 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 1rem;
-  background: linear-gradient(to top, rgba(5, 8, 22, 0.9), transparent);
+  padding: 1.25rem 1rem 0.85rem;
+  background: linear-gradient(to top, rgba(28, 25, 23, 0.85) 0%, rgba(28, 25, 23, 0.5) 60%, transparent 100%);
+  color: #FFFFFF;
 }
 
 .profile-name {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: 1.1rem;
+  color: #FFFFFF;
 }
 
 .profile-role {
-  font-size: 0.875rem;
-  color: var(--primary-color);
+  font-size: 0.8rem;
+  color: #93C5FD;
 }
 
 .profile-location {
   font-size: 0.75rem;
-  color: var(--text-muted);
-  margin-top: 0.25rem;
+  color: #E2E8F0;
+  margin-top: 0.2rem;
 }

@@ -28,25 +28,27 @@
 }
 
 .about-card {
-  padding: 1.5rem;
+  padding: 1.75rem;
   height: 100%;
 }
 
 .main-card {
   padding: 2rem;
+  background: #FFFFFF;
 }
 
 .about-card-title {
   font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.15rem;
+  font-weight: 700;
   margin-bottom: 1rem;
+  color: var(--text-main);
 }
 
 .about-card-desc {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .profile-details {
@@ -58,14 +60,16 @@
 
 .profile-details p {
   color: var(--text-main);
+  display: flex;
+  gap: 0.5rem;
 }
 
 .profile-details span {
   color: var(--text-muted);
-  display: inline-block;
-  width: 80px;
+  font-weight: 500;
+  min-width: 80px;
 }
 
 .mt-12 {
-  margin-top: 3rem;
+  margin-top: 2.5rem;
 }
