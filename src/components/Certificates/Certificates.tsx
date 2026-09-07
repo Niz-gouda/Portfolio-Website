@@ -21,6 +21,12 @@ interface AchievementItem {
 export function Certificates() {
   const certificates: CertificateItem[] = [
     {
+      id: 'hackerrank-software-engineer',
+      image: '/certificates/hackerrank-software engineer.png',
+      link: 'https://www.hackerrank.com/certificates/7E5332333CD7',
+      alt: 'HackerRank Software Engineer Role Certificate - Nischalgouda Patil',
+    },
+    {
       id: 'hackerrank-rest-api',
       image: hackerrankCertPng,
       link: 'https://www.hackerrank.com/certificates/BEFCD830BDC3',
