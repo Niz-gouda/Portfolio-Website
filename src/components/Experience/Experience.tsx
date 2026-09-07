@@ -9,11 +9,11 @@ export function Experience() {
       location: 'Bengaluru',
       date: 'Oct 2025 – Present',
       points: [
-        'Designed and shipped the company\'s first production AI chatbot architecture (OpenAI & OpenRouter) — multi-tenant-ready, with context management, intent recognition, and token optimisation — cutting API costs by 85% with zero quality degradation.',
+        'Designed and shipped the company\'s first production AI chatbot architecture (OpenAI & OpenRouter): multi-tenant-ready, with context management, intent recognition, and token optimisation, cutting API costs by 85% with zero quality degradation.',
         'Engineered multi-provider LLM routing with automatic fallback for reliability; instrumented a telemetry layer tracking query types, resolution rates, and API spend for ongoing cost control.',
         'Owned migration of legacy WordPress EdTech platform to React 18 + TypeScript, delivering D3.js dashboards, Zustand state management, and automated PDF reporting.',
         'Built and secured scalable REST APIs with role-based auth, file storage, and optimised PostgreSQL queries powering AI-facing front-ends.',
-        'Lead internal AI tooling adoption org-wide — evaluated and introduced Kiro, Cursor, and Claude Code; measurably improving development velocity.'
+        'Lead internal AI tooling adoption org-wide: evaluated and introduced Kiro, Cursor, and Claude Code, measurably improving development velocity.'
       ]
     },
     {
@@ -24,7 +24,7 @@ export function Experience() {
       date: 'Feb 2025 – Sep 2025',
       points: [
         'Led full-stack development of an enterprise Letter Management Portal (React, TypeScript, ASP.NET Core), serving 100+ users.',
-        'Designed and shipped the company\'s first production AI system — an OpenRouter-integrated support chatbot — reducing support query volume by 60%.',
+        'Designed and shipped the company\'s first production AI system: an OpenRouter-integrated support chatbot, reducing support query volume by 60%.',
         'Built real-time analytics dashboards with PostgreSQL integration; extended client platform with D3.js visualisation components.',
         'Participated in code reviews, sprint planning, and retrospectives across the full SDLC.'
       ]

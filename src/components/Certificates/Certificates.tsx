@@ -44,7 +44,7 @@ export function Certificates() {
     {
       id: 'leetcode',
       category: 'Problem Solving',
-      title: 'LeetCode — 200+ Problems Solved',
+      title: 'LeetCode: 200+ Problems Solved',
       subtitle: 'Strong foundation in Data Structures, Trees, Graphs & Dynamic Programming algorithms.',
       highlight: '200+ Solved',
       icon: Code2,
@@ -68,7 +68,7 @@ export function Certificates() {
     {
       id: 'venture',
       category: 'Entrepreneurship',
-      title: 'Co-Founder — Social Experiences Venture',
+      title: 'Co-Founder: Social Experiences Venture',
       subtitle: 'Conceptualized and scaled curated community experiences to 400+ attendees across cities.',
       highlight: '400+ Community',
       icon: Compass,

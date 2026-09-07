@@ -1,4 +1,4 @@
-import { Download, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import profileImg from '../../assets/Nischal Portfolio.jpeg';
 import './Hero.css';
 
@@ -18,15 +18,11 @@ export function Hero() {
             <span className="cursor-blink"></span>
           </div>
           <p className="hero-description">
-            I design and ship production-ready LLM systems — from multi-tenant chatbot architectures to enterprise full-stack web platforms.
+            I design and ship production-ready LLM systems, from multi-tenant chatbot architectures to enterprise full-stack web platforms.
           </p>
 
           <div className="hero-actions">
-            <a href="#" className="btn btn-primary">
-              <Download size={18} />
-              Resume
-            </a>
-            <a href="#contact" className="btn btn-outline">
+            <a href="#contact" className="btn btn-primary">
               <Sparkles size={18} />
               Hire Me
             </a>
