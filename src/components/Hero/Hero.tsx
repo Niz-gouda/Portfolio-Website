@@ -1,4 +1,4 @@
-import { Download, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import profileImg from '../../assets/Nischal Portfolio.jpeg';
 import './Hero.css';
 
@@ -22,11 +22,7 @@ export function Hero() {
           </p>
 
           <div className="hero-actions">
-            <a href="#" className="btn btn-primary">
-              <Download size={18} />
-              Resume
-            </a>
-            <a href="#contact" className="btn btn-outline">
+            <a href="#contact" className="btn btn-primary">
               <Sparkles size={18} />
               Hire Me
             </a>

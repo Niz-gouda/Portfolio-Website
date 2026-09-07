@@ -6,8 +6,10 @@
 .footer-top {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  align-items: flex-start;
+  gap: 1.75rem;
+  /* Mobile: center everything */
+  align-items: center;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -15,7 +17,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    text-align: left;
   }
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
 .text-xl {
@@ -33,7 +42,15 @@
 .social-links {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .social-links {
+    justify-content: flex-end;
+  }
 }
 
 .social-icon {
@@ -66,6 +83,7 @@
   gap: 0.5rem;
   font-size: 0.8rem;
   color: var(--text-muted);
+  text-align: center;
 }
 
 @media (min-width: 640px) {
@@ -73,5 +91,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    text-align: left;
   }
 }
+

@@ -37,7 +37,6 @@ export function Navbar() {
         </nav>
 
         <div className="navbar-actions">
-          <a href="#contact" className="btn btn-glow hire-btn">Hire Me</a>
           <button className="menu-btn" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -56,9 +55,6 @@ export function Navbar() {
               {link.name}
             </a>
           ))}
-          <a href="#contact" className="btn btn-glow w-full" style={{marginTop: '1rem'}} onClick={() => setIsMenuOpen(false)}>
-            Hire Me
-          </a>
         </div>
       )}
     </header>
