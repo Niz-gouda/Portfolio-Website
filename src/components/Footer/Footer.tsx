@@ -8,7 +8,7 @@ export function Footer() {
         <div className="footer-top">
           <div>
             <p className="font-display text-xl font-bold">Nischalgouda Patil<span className="text-primary">.</span></p>
-            <p className="mt-2 text-sm text-muted max-w-md">Building production-ready AI systems — RAG, agents, and full-stack enterprise products.</p>
+            <p className="mt-2 text-sm text-muted max-w-md">Building production-ready AI systems: RAG, agents, and full-stack enterprise products.</p>
           </div>
           
           <div className="social-links">

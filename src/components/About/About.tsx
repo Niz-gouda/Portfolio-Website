@@ -8,7 +8,7 @@ export function About() {
           <p className="section-eyebrow">About</p>
           <h2 className="section-title">Engineer who ships <span className="gradient-text">production AI</span></h2>
           <p className="section-lead">
-            I'm a full-stack engineer who builds scalable LLM systems. I led the architecture for ZiniosEdge's production AI system, cutting costs by 85% and support query volume by 60%. I work across the full stack—from React and TypeScript to ASP.NET Core and PostgreSQL.
+            I'm a full-stack engineer who builds scalable LLM systems. I led the architecture for ZiniosEdge's production AI system, cutting costs by 85% and support query volume by 60%. I work across the full stack: React and TypeScript to ASP.NET Core and PostgreSQL.
           </p>
         </div>
 

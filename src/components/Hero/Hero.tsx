@@ -18,7 +18,7 @@ export function Hero() {
             <span className="cursor-blink"></span>
           </div>
           <p className="hero-description">
-            I design and ship production-ready LLM systems — from multi-tenant chatbot architectures to enterprise full-stack web platforms.
+            I design and ship production-ready LLM systems, from multi-tenant chatbot architectures to enterprise full-stack web platforms.
           </p>
 
           <div className="hero-actions">
