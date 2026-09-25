@@ -1,6 +1,5 @@
 import './Certificates.css';
 import { ExternalLink, Code2, Trophy, Flame, Compass, Users } from 'lucide-react';
-import hackerrankCertPng from '../../assets/Hackerrank Rest API certificate.png';
 
 interface CertificateItem {
   id: string;
@@ -28,7 +27,7 @@ export function Certificates() {
     },
     {
       id: 'hackerrank-rest-api',
-      image: hackerrankCertPng,
+      image: '/certificates/hackerrank-rest-api.png',
       link: 'https://www.hackerrank.com/certificates/BEFCD830BDC3',
       alt: 'HackerRank REST API (Intermediate) Certificate - Nischalgouda Patil',
     },
@@ -37,6 +36,12 @@ export function Certificates() {
       image: '/certificates/NPTEL DSA w JAVA.png',
       link: 'https://drive.google.com/file/d/16oecJsOpT74NuAAtRnoRgKPp1O62wiTg/view?usp=sharing',
       alt: 'NPTEL DSA with Java (Elite) Certificate - IIT Kharagpur',
+    },
+    {
+      id: 'hackerrank-orchestra-sep',
+      image: '/certificates/HackerrankHackathonSEP.png',
+      link: '',
+      alt: 'HackerRank Orchestra Hackathon - SEP',
     },
   ];
 
