@@ -1,62 +1,39 @@
-import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import './Navbar.css';
+import { useTheme } from '../../hooks/useTheme';
+import { person } from '../../data/content';
+import { Logo } from '../ui/Logo';
+import styles from './Navbar.module.css';
+
+const LINKS = [
+  { href: '#about', label: 'About' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#credentials', label: 'Credentials' },
+  { href: '#contact', label: 'Contact' },
+];
+
+const THEME_LABEL = { system: 'Theme: system', light: 'Theme: light', dark: 'Theme: dark' } as const;
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-  ];
-
+  const { preference, cycle } = useTheme();
   return (
-    <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container-narrow navbar-inner">
-        <a href="/" className="logo">
-          Nischal<span className="logo-dot">.</span>
+    <header className={styles.bar}>
+      <div className={`container ${styles.inner}`}>
+        <a className={styles.brand} href="#top" aria-label={`${person.name}, back to top`}>
+          <Logo />
+          <span>{person.shortName}</span>
         </a>
-
-        <nav className="desktop-nav">
-          {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="nav-link">
-              {link.name}
+        <nav aria-label="Primary" className={styles.nav}>
+          {LINKS.map((l) => (
+            <a key={l.href} href={l.href}>
+              {l.label}
             </a>
           ))}
         </nav>
-
-        <div className="navbar-actions">
-          <button className="menu-btn" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
+        <button type="button" className={styles.theme} onClick={cycle} aria-label={`${THEME_LABEL[preference]}. Click to change.`}>
+          {preference === 'system' ? 'Auto' : preference === 'light' ? 'Light' : 'Dark'}
+        </button>
       </div>
-      
-      {isMenuOpen && (
-        <div className="mobile-nav glass-panel">
-          {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href} 
-              className="mobile-nav-link"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {link.name}
-            </a>
-          ))}
-        </div>
-      )}
     </header>
   );
 }

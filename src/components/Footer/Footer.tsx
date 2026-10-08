@@ -1,37 +1,35 @@
-import { Terminal, Briefcase, Mail, ExternalLink } from 'lucide-react';
-import './Footer.css';
+import { contact, person } from '../../data/content';
+import styles from './Footer.module.css';
+
+const LINKS = [
+  { label: 'LinkedIn', href: person.links.linkedin },
+  { label: 'GitHub', href: person.links.github },
+  { label: 'LeetCode', href: person.links.leetcode },
+] as const;
 
 export function Footer() {
   return (
-    <footer id="contact" className="footer">
-      <div className="container-narrow section-pad" style={{paddingTop: '3rem', paddingBottom: '3rem'}}>
-        <div className="footer-top">
-          <div>
-            <p className="font-display text-xl font-bold">Nischalgouda Patil<span className="text-primary">.</span></p>
-            <p className="mt-2 text-sm text-muted max-w-md">Building production-ready AI systems: RAG, agents, and full-stack enterprise products.</p>
-          </div>
-          
-          <div className="social-links">
-            <a href="https://github.com/Nischalgouda" target="_blank" rel="noreferrer" aria-label="GitHub" className="social-icon">
-              <Terminal size={20} />
-            </a>
-            <a href="https://www.linkedin.com/in/nischalgouda-patil-39b439279/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="social-icon">
-              <Briefcase size={20} />
-            </a>
-            <a href="https://leetcode.com/u/Nischalgouda2/" target="_blank" rel="noreferrer" aria-label="LeetCode" className="social-icon">
-              <ExternalLink size={20} />
-            </a>
-            <a href="mailto:nischalgouda11@gmail.com" aria-label="Email" className="social-icon">
-              <Mail size={20} />
-            </a>
-          </div>
+    <footer className={styles.footer} id="contact" aria-labelledby="contact-title">
+      <div className={`container ${styles.inner}`}>
+        <div>
+          <p className="eyebrow">Contact</p>
+          <h2 className="h2" id="contact-title">
+            {contact.heading}
+          </h2>
+          <p className="lead">{contact.body}</p>
         </div>
-
-        <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} Nischalgouda Patil. All rights reserved.</p>
-          <p className="font-mono">AI Engineer · Full Stack · Bengaluru</p>
-        </div>
+        <ul className={styles.links}>
+          {LINKS.map((l) => (
+            <li key={l.label}>
+              <a className="btn btn-primary" href={l.href} target="_blank" rel="noopener noreferrer">
+                {l.label}
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
+      <p className={`container ${styles.fine}`}>© {new Date().getFullYear()} {person.name}. {person.location}.</p>
     </footer>
   );
 }

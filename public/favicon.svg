@@ -1,16 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <!-- Background with subtle modern dark tile -->
-  <rect width="64" height="64" rx="14" fill="#1C1917" />
-  <rect x="1" y="1" width="62" height="62" rx="13" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1.5" />
-  
-  <!-- "NP" Monogram -->
-  <text 
-    x="32" 
-    y="43" 
-    font-family="'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
-    font-size="28" 
-    font-weight="800" 
-    fill="#FFFFFF" 
-    text-anchor="middle" 
-    letter-spacing="-0.8px">NP</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .t { fill: #171717 } .n { fill: #fff }
+    @media (prefers-color-scheme: dark) { .t { fill: #ededed } .n { fill: #0a0a0b } }
+  </style>
+  <rect class="t" width="32" height="32" rx="7"/>
+  <path class="n" d="M9 23V9h3l8 10V9h3v14h-3L12 13v10z"/>
+  <rect x="9" y="25" width="6" height="2" fill="#2a78d6"/>
+  <rect x="17" y="25" width="6" height="2" fill="#eb6834"/>
 </svg>

@@ -1,74 +1,43 @@
-import { useState } from 'react';
-import { Search } from 'lucide-react';
-import './Skills.css';
+import { skills, tools } from '../../data/content';
+import { Reveal } from '../ui/Reveal';
+import { SectionHead } from '../ui/SectionHead';
+import styles from './Skills.module.css';
 
 export function Skills() {
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const skills = [
-    {
-      category: 'AI / LLM Engineering',
-      items: ['OpenAI API', 'OpenRouter', 'LLM orchestration', 'Context management', 'Token optimisation', 'Prompt engineering', 'Agent harnesses', 'NLP', 'Chatbot architectures']
-    },
-    {
-      category: 'Frontend Architecture',
-      items: ['React 18', 'TypeScript', 'HTML5', 'CSS3', 'SCSS', 'D3.js', 'Zustand', 'Context API', 'Redux', 'React-PDF']
-    },
-    {
-      category: 'Backend & Microservices',
-      items: ['ASP.NET Core', 'Node.js', 'REST APIs', '.NET Framework', 'Microservices', 'FastAPI']
-    },
-    {
-      category: 'Databases & Storage',
-      items: ['PostgreSQL', 'SQL Server', 'MongoDB', 'Entity Framework Core']
-    },
-    {
-      category: 'Cloud, DevOps & Infra',
-      items: ['Azure', 'AWS', 'GCP', 'Docker', 'Git', 'CI/CD', 'Jenkins', 'Jira']
-    },
-    {
-      category: 'Languages & AI Tooling',
-      items: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C#', 'SQL', 'C++', 'Claude Code', 'Cursor', 'Codex']
-    }
-  ];
-
-  const filteredSkills = skills.map(group => ({
-    ...group,
-    items: group.items.filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()))
-  })).filter(group => group.items.length > 0);
-
   return (
-    <section id="skills" className="section-pad relative">
-      <div className="container-narrow">
-        <div className="animate-fade-in">
-          <p className="section-eyebrow">Skills &amp; Capabilities</p>
-          <h2 className="section-title">Technical stack built for <span className="gradient-text">scale</span></h2>
-          <p className="section-lead">From LLM orchestration and retrieval to scalable backend services and responsive client surfaces.</p>
-        </div>
-
-        <div className="skills-search animate-fade-in delay-100">
-          <Search className="search-icon" size={16} />
-          <input
-            type="text"
-            placeholder="Filter skills (React, OpenAI, Docker...)"
-            className="search-input"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
-
-        <div className="skills-grid mt-10">
-          {filteredSkills.map((skillGroup) => (
-            <div key={skillGroup.category} className="glass-card skill-card animate-fade-in delay-200">
-              <h3 className="skill-category">{skillGroup.category}</h3>
-              <div className="skill-tags">
-                {skillGroup.items.map((item) => (
-                  <span key={item} className="tech-chip">{item}</span>
-                ))}
-              </div>
-            </div>
+    <section className="section" id="skills" aria-labelledby="skills-title">
+      <div className="container">
+        <SectionHead
+          id="skills-title"
+          eyebrow="Skills"
+          title="Grouped by how I have used them"
+          lead="Production means it ran for real users at work. Shipped means I built and deployed it in a project."
+        />
+        <ul className={styles.tiers}>
+          {skills.map((t, i) => (
+            <li key={t.id}>
+              <Reveal delay={i * 60}>
+                <div className={styles.tier} data-tier={t.id}>
+                  <h3>{t.title}</h3>
+                  <p className={styles.caption}>{t.caption}</p>
+                  <ul className={styles.items}>
+                    {t.items.map((s) => (
+                      <li key={s}>{s}</li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
+            </li>
           ))}
-        </div>
+        </ul>
+        <p className={styles.tools}>
+          <span>AI tooling I work with daily</span>
+          {tools.map((t) => (
+            <b key={t} className="chip">
+              {t}
+            </b>
+          ))}
+        </p>
       </div>
     </section>
   );

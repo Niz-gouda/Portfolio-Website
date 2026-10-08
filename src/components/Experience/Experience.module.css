@@ -1,0 +1,109 @@
+.roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-8);
+  margin-top: var(--space-6);
+}
+.roles li {
+  display: grid;
+  gap: 2px;
+  padding-left: var(--space-4);
+  box-shadow: inset 2px 0 0 var(--mark-above);
+  font-size: var(--fs-sm);
+}
+.roles span {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+.roles em {
+  font-style: normal;
+  color: var(--text-dim);
+}
+.work {
+  display: grid;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+.card {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-8);
+  border-radius: var(--radius-4);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+}
+.kicker {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.card h3 {
+  font-size: var(--fs-xl);
+  letter-spacing: -0.03em;
+}
+.body {
+  max-width: 70ch;
+  color: var(--text-muted);
+}
+.bullets {
+  display: grid;
+  gap: var(--space-2);
+  max-width: 78ch;
+  font-size: var(--fs-sm);
+}
+.bullets li {
+  position: relative;
+  padding-left: var(--space-5);
+}
+.bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  background: var(--mark-above);
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.notes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+.notes li {
+  display: flex;
+}
+.notes li > div {
+  width: 100%;
+}
+.note {
+  height: 100%;
+  padding: var(--space-5);
+  border-radius: var(--radius-3);
+  background: var(--surface-sunken);
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+.note h3 {
+  font-size: var(--fs-md);
+}
+.note p {
+  margin-top: var(--space-2);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+@media (max-width: 800px) {
+  .notes {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .card {
+    padding: var(--space-5);
+  }
+}

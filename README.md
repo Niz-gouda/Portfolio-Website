@@ -1,32 +1,28 @@
-# React + TypeScript + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Personal site for Nischalgouda Patil. Live: https://nischal-portfolio-psi.vercel.app/
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Vite, React 19, TypeScript (strict), CSS Modules with a design-token system, Geist and Geist Mono (self-hosted), light and dark themes, Vitest.
 
-## React Compiler
+## Where things live
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `src/data/content.ts`: every word on the site. Edit facts here, not in components.
+- `src/data/content.test.ts`: guards the copy (no em dashes, no phone or personal email, no unclaimed skills, https links only).
+- `src/index.css`: design tokens (colour, type, spacing, elevation) and shared primitives.
+- `src/components/*`: one folder per section, each with its own CSS Module.
+- `public/certificates/`: certificate images.
 
-## Expanding the Oxlint configuration
+## Adding the hackathon certificate link
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+In `content.ts`, find the `hackerrank-orchestrate` certificate and set its `href` to the Drive link. Then update the "leaves exactly one certificate without a link" check in `content.test.ts` to expect zero.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+## Commands
+
 ```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+npm run dev        # local dev server
+npm run build      # typecheck and production build
+npm test           # content invariants
+npx oxlint         # lint
+```

@@ -1,50 +1,60 @@
-import './About.css';
+import { about } from '../../data/content';
+import photo from '../../assets/Nischal Portfolio.jpeg';
+import { Reveal } from '../ui/Reveal';
+import { SectionHead } from '../ui/SectionHead';
+import styles from './About.module.css';
 
 export function About() {
   return (
-    <section id="about" className="section-pad relative overflow-hidden">
-      <div className="container-narrow relative z-10">
-        <div className="animate-fade-in">
-          <p className="section-eyebrow">About</p>
-          <h2 className="section-title">Engineer who ships <span className="gradient-text">production AI</span></h2>
-          <p className="section-lead">
-            I'm a full-stack engineer who builds scalable LLM systems. I led the architecture for ZiniosEdge's production AI system, cutting costs by 85% and support query volume by 60%. I work across the full stack: React and TypeScript to ASP.NET Core and PostgreSQL.
-          </p>
+    <section className="section" id="about" aria-labelledby="about-title">
+      <div className="container">
+        <SectionHead id="about-title" eyebrow="About" title={about.lead} />
+        <div className={styles.top}>
+          <Reveal>
+            <div className={styles.copy}>
+              {about.paragraphs.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+              <dl className={styles.facts}>
+                {about.facts.map((f) => (
+                  <div key={f.label}>
+                    <dt>{f.label}</dt>
+                    <dd>{f.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </Reveal>
+          <Reveal delay={80}>
+            <img className={styles.photo} src={photo} alt="Nischalgouda Patil" width={1600} height={900} loading="lazy" />
+          </Reveal>
         </div>
 
-        <div className="about-grid mt-12">
-          <div className="glass-card about-card main-card animate-fade-in delay-100">
-            <div className="about-card-content">
-              <h3 className="about-card-title">Profile Snapshot</h3>
-              <div className="profile-details">
-                <p><span>Name:</span> Nischalgouda Patil</p>
-                <p><span>Role:</span> Associate Software Engineer</p>
-                <p><span>Company:</span> ZiniosEdge Software Technologies</p>
-                <p><span>Location:</span> Bengaluru, India</p>
-                <p><span>Education:</span> B.E. Information Science, KLS Gogte Institute of Technology</p>
-              </div>
-            </div>
-          </div>
+        <Reveal>
+          <ol className={styles.path} aria-label="Career path">
+            {about.path.map((s) => (
+              <li key={s.stage} className={'current' in s && s.current ? styles.current : undefined}>
+                <span className={styles.stage}>{s.stage}</span>
+                <strong>{s.title}</strong>
+                <span>{s.line1}</span>
+                <span>{s.line2}</span>
+              </li>
+            ))}
+          </ol>
+        </Reveal>
 
-          <div className="about-sub-grid">
-            <div className="glass-card about-card animate-fade-in delay-200">
-              <div className="about-card-content">
-                <h3 className="about-card-title">Core Strengths</h3>
-                <p className="about-card-desc">
-                  LLM orchestration, context management, token optimization, prompt engineering, agent harnesses, and building multi-tenant chatbots.
-                </p>
-              </div>
-            </div>
-            <div className="glass-card about-card animate-fade-in delay-300">
-              <div className="about-card-content">
-                <h3 className="about-card-title">Full Stack Excellence</h3>
-                <p className="about-card-desc">
-                  React 18, TypeScript, ASP.NET Core, Node.js. Delivering D3.js dashboards, Zustand state management, and real-time APIs.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ul className={styles.strengths}>
+          {about.strengths.map((s, i) => (
+            <li key={s.title}>
+              <Reveal delay={i * 40}>
+                <div className={styles.card}>
+                  <h3>{s.title}</h3>
+                  <p>{s.body}</p>
+                </div>
+              </Reveal>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
