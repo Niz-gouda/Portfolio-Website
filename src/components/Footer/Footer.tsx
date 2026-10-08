@@ -1,10 +1,11 @@
 import { contact, person } from '../../data/content';
+import { BrandLink } from '../ui/BrandLink';
 import styles from './Footer.module.css';
 
 const LINKS = [
-  { label: 'LinkedIn', href: person.links.linkedin },
-  { label: 'GitHub', href: person.links.github },
-  { label: 'LeetCode', href: person.links.leetcode },
+  { brand: 'linkedin', href: person.links.linkedin },
+  { brand: 'github', href: person.links.github },
+  { brand: 'leetcode', href: person.links.leetcode },
 ] as const;
 
 export function Footer() {
@@ -20,11 +21,8 @@ export function Footer() {
         </div>
         <ul className={styles.links}>
           {LINKS.map((l) => (
-            <li key={l.label}>
-              <a className="btn btn-primary" href={l.href} target="_blank" rel="noopener noreferrer">
-                {l.label}
-                <span className="sr-only"> (opens in a new tab)</span>
-              </a>
+            <li key={l.brand}>
+              <BrandLink brand={l.brand} href={l.href} />
             </li>
           ))}
         </ul>

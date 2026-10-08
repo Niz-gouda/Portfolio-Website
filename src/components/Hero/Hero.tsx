@@ -1,4 +1,5 @@
 import { person, proof } from '../../data/content';
+import { BrandLink } from '../ui/BrandLink';
 import styles from './Hero.module.css';
 
 export function Hero() {
@@ -15,12 +16,8 @@ export function Hero() {
             <a className="btn btn-primary" href="#projects">
               See the work
             </a>
-            <a className="btn btn-secondary" href={person.links.linkedin} target="_blank" rel="noopener noreferrer">
-              LinkedIn
-            </a>
-            <a className="btn btn-secondary" href={person.links.github} target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>
+            <BrandLink brand="linkedin" href={person.links.linkedin} variant="outline" />
+            <BrandLink brand="github" href={person.links.github} variant="outline" />
           </div>
         </div>
 
