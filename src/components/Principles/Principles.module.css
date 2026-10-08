@@ -48,3 +48,17 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Icon sits in a small tile that tilts on hover, like picking up a card. */
+.card svg {
+  width: 56px;
+  height: 56px;
+  padding: var(--space-2);
+  border-radius: var(--radius-3);
+  background: var(--surface-sunken);
+  box-shadow: inset 0 0 0 1px var(--border);
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.card:hover svg {
+  transform: rotate(-6deg) scale(1.06);
+}

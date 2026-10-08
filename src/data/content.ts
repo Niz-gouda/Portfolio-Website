@@ -36,10 +36,10 @@ export const proof = [
     href: 'https://rag-xray.agreeablesky-d286d090.centralus.azurecontainerapps.io',
   },
   {
-    label: 'Ranked',
-    value: '45 of about 2,500',
-    detail: 'HackerRank Orchestrate hackathon, top 2%.',
-    href: 'https://github.com/Nischalgouda/affordra',
+    label: 'Contributing',
+    value: 'Open PR to LiteLLM',
+    detail: 'A rate-limit hook for a production LLM gateway. Not merged yet.',
+    href: 'https://github.com/BerriAI/litellm/pull/40727',
   },
   {
     label: 'Production',
@@ -133,7 +133,7 @@ export const projects: readonly Project[] = [
   {
     id: 'affordra',
     name: 'Affordra',
-    kicker: 'HackerRank Orchestrate · rank 45 of about 2,500 (top 2%)',
+    kicker: 'HackerRank Orchestrate hackathon',
     pitch:
       'A financial decision agent that answers "can I afford this?". Gemini Vision reads 16 receipt images, and all arithmetic runs in deterministic Python, so the model never does the math.',
     bullets: [
@@ -314,12 +314,6 @@ export const certificates: readonly Certificate[] = [
 ];
 
 export const achievements = {
-  assessments: [
-    { title: 'Rank 45 of about 2,500 (top 2%)', body: 'HackerRank Orchestrate hackathon, with Affordra.' },
-    { title: 'Google Apprenticeship online assessment', body: '50/50 on both problems (Sep 2026).' },
-    { title: 'HackerRank Forward Deployed Engineer assessment', body: 'Passed all three sections: DSA, REST API and SQL.' },
-    { title: 'LeetCode: 200+ problems', body: 'Recent focus on arrays, hashing, two pointers, stacks and trees.' },
-  ],
   leadership: [
     {
       title: 'Rotaract Club of Belgaum Yuva Darpan (District 3170)',

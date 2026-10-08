@@ -1,4 +1,4 @@
-﻿import { describe, expect, it } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import * as content from './content';
 
 const text = JSON.stringify(content);
@@ -20,7 +20,7 @@ describe('content invariants', () => {
   });
 
   it('keeps unconfirmed claims out', () => {
-    for (const unconfirmed of ['Allied', '85%', '60%', 'Co-Founder', 'State Level']) {
+    for (const unconfirmed of ['Allied', '85%', '60%', 'Co-Founder', 'State Level', '45 of', 'top 2%']) {
       expect(text).not.toContain(unconfirmed);
     }
   });

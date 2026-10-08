@@ -1,47 +1,44 @@
 import { achievements, certificates } from '../../data/content';
-import { Reveal } from '../ui/Reveal';
 import { SectionHead } from '../ui/SectionHead';
 import styles from './Credentials.module.css';
+
+function CertCard({ c, hidden }: { c: (typeof certificates)[number]; hidden?: boolean }) {
+  const img = <img src={c.image} alt={hidden ? '' : c.alt} width={c.width} height={c.height} loading="lazy" />;
+  if (c.href) {
+    return (
+      <a className={styles.cert} href={c.href} target="_blank" rel="noopener noreferrer" tabIndex={hidden ? -1 : undefined}>
+        {img}
+        {hidden ? null : <span className="sr-only">Verify credential (opens in a new tab)</span>}
+      </a>
+    );
+  }
+  return <div className={styles.cert}>{img}</div>;
+}
 
 export function Credentials() {
   return (
     <section className="section" id="credentials" aria-labelledby="cred-title">
       <div className="container">
-        <SectionHead id="cred-title" eyebrow="Credentials" title="Assessments, certificates and leadership" />
+        <SectionHead id="cred-title" eyebrow="Credentials" title="Certificates and leadership" />
+      </div>
 
-        <ul className={styles.assess}>
-          {achievements.assessments.map((a) => (
-            <li key={a.title}>
-              <Reveal>
-                <div className={styles.stat}>
-                  <h3>{a.title}</h3>
-                  <p>{a.body}</p>
-                </div>
-              </Reveal>
+      <div className={styles.marquee} role="region" aria-label="Certificates">
+        <ul className={styles.track}>
+          {certificates.map((c) => (
+            <li key={c.id}>
+              <CertCard c={c} />
+            </li>
+          ))}
+          {/* Second copy makes the loop seamless. Hidden from assistive tech and the tab order. */}
+          {certificates.map((c) => (
+            <li key={`${c.id}-copy`} aria-hidden="true">
+              <CertCard c={c} hidden />
             </li>
           ))}
         </ul>
+      </div>
 
-        <ul className={styles.certs}>
-          {certificates.map((c) => {
-            const img = <img src={c.image} alt={c.alt} width={c.width} height={c.height} loading="lazy" />;
-            return (
-              <li key={c.id}>
-                <Reveal>
-                  {c.href ? (
-                    <a className={styles.cert} href={c.href} target="_blank" rel="noopener noreferrer">
-                      {img}
-                      <span className="sr-only">Verify credential (opens in a new tab)</span>
-                    </a>
-                  ) : (
-                    <div className={styles.cert}>{img}</div>
-                  )}
-                </Reveal>
-              </li>
-            );
-          })}
-        </ul>
-
+      <div className="container">
         <h3 className={styles.sub}>Leadership and community</h3>
         <ul className={styles.lead}>
           {achievements.leadership.map((l) => (
